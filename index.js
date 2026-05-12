@@ -1,4 +1,5 @@
 /**
+ * //parameters!!!!!!!!!
  * @param {number} num1 - First number to add.
  * @param {number} num2 - Second number to add.
  * @returns {number} The sum, unless the two values are the same,
@@ -11,8 +12,21 @@
  * @example
  * sumDouble(5, 5); // 20
  */
+//exporting function
+//declairing func named sumDouble
+//2 parameters, nun1 and nun2
 export function sumDouble(num1, num2) {
   /* TODO */
+  // here i want to double the numbers, if they both equal eachother
+  if (nun1 === nun2) {
+    return 2 * (num1 + num2);
+  }
+  return nun1 + nun2;
+
+  const sum = nun2 + nun2;
+  //if nun1 === nun2 ? return 2 sum, otherwise return sum
+
+  return nun1 === nun2 ? 2 * sum : sum;
 }
 
 /**
@@ -28,7 +42,9 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
-  /* TODO */
+  // here numbers will strictly be true if any numbers sum is 10 or there number is 10
+  // number 1 equals 10 OR number 2 equals 10 OR num1+num2=10
+  return num1 === 10 || nun2 === 10 || nun1 + nun2 === 10;
 }
 
 /**
@@ -47,23 +63,25 @@ export function makes10(num1, num2) {
  */
 export function near100(n, distance) {
   /* TODO */
-}
+  const difference = Math.abs(n - 100);
+  return difference <= distance;
 
-/**
- * Hint: use the remainder operator (%)
- *
- * @param {number} n - The number to check.
- * @returns {boolean} Whether n is a multiple of 3 or 5.
- *
- * @example
- * isMultiple35(3); // true
- * @example
- * isMultiple35(10); // true
- * @example
- * isMultiple35(7); // false
- */
-export function isMultiple35(n) {
-  /* TODO */
+  /**
+   * Hint: use the remainder operator (%)
+   *
+   * @param {number} n - The number to check.
+   * @returns {boolean} Whether n is a multiple of 3 or 5.
+   *
+   * @example
+   * isMultiple35(3); // true
+   * @example
+   * isMultiple35(10); // true
+   * @example
+   * isMultiple35(7); // false
+   */
+  export function isMultiple35(n) {
+    return n % 3 === 0 || n % 5 === 0;
+  }
 }
 
 /**
@@ -81,7 +99,7 @@ export function isMultiple35(n) {
  * shareLastDigit(10, 21); // false
  */
 export function shareLastDigit(num1, num2) {
-  /* TODO */
+  return num1 % 10 === num2 % 10;
 }
 
 /**
@@ -98,7 +116,7 @@ export function shareLastDigit(num1, num2) {
  * isColdAndHot(10, 50); // false
  */
 export function isColdAndHot(temp1, temp2) {
-  /* TODO */
+  return (temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0);
 }
 
 /**
@@ -114,7 +132,7 @@ export function isColdAndHot(temp1, temp2) {
  * makeABBA("a", "b"); // "abba"
  */
 export function makeABBA(A, B) {
-  /* TODO */
+  return A + B + B + A;
 }
 
 /**
@@ -135,7 +153,7 @@ export function makeABBA(A, B) {
  * makeSLS("a", "abc"); // "aabca"
  */
 export function makeSLS(str1, str2) {
-  /* TODO */
+  return str1.length < str2.length ? str1 + str2 + str1 : str2 + str1 + str2;
 }
 
 /**
@@ -156,7 +174,13 @@ export function makeSLS(str1, str2) {
  * canEnterClub(5, 5); // 1
  */
 export function canEnterClub(you, date) {
-  /* TODO */
+  if (you <= 2 || date <= 2) {
+    return 0;
+  } else if (you >= 8 || date >= 8) {
+    return 2;
+  } else {
+    return 1;
+  }
 }
 
 /**
@@ -177,5 +201,11 @@ export function canEnterClub(you, date) {
  * shouldAnswerPhone(true, true, false); // true
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
-  /* TODO */
+  if (isAsleep) {
+    return false;
+  } else if (isMorning) {
+    return isBoss;
+  } else {
+    return true;
+  }
 }
